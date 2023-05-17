@@ -2,6 +2,7 @@
 <?php
     include_once 'header.php';
 ?>
+<link rel="stylesheet" href="<?php echo 'styles.css'; ?>">
 
 <nav>
     <ul>

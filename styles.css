@@ -1,3 +1,24 @@
 body{
     background-color: rgb(164, 88, 34);
 }
+
+nav ul{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    border: 1px solid #c20505;
+    background-color: #c8894a;
+
+}
+nav li{
+    display: inline;
+    float: left;
+}
+li a{
+    display: block;
+    color:rgb(209, 61, 8);
+    text-alight:center;
+    padding: 14px 16px;
+    text-decoration: none;
+}

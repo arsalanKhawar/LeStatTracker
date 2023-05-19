@@ -7,6 +7,7 @@
 <!-- Creating Registration form -->
 <section class="signup">
     <h2 id="signuplabel">Sign up</h2>
+    <div class="signup-form">
     <form action="signup.inc.php" method="post">
         <input type="text" name="email" placeholder="Email">
         <input type="text" name="username" placeholder="use">
@@ -14,4 +15,5 @@
         <input type="text" name="confirmpassword" placeholder="Confirm Password">
         <button type="submit" name="submit">Submit</button>
     </form>
+    </div>
 </section>

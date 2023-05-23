@@ -8,7 +8,7 @@
 <section class="signup">
     <h2 id="signuplabel">Sign up</h2>
     <div class="signup-form">
-    <form action="signup.inc.php" method="post">
+    <form action="includes/signup.inc.php" method="post">
         <input type="text" name="email" placeholder="Email">
         <input type="text" name="username" placeholder="use">
         <input type="text" name="password" placeholder="Password">

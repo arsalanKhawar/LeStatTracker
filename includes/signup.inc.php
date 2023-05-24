@@ -5,8 +5,15 @@
         $username = $_POST["username"];
         $password = $_POST["password"];
         $confirmpassword = $_POST["confirmpassword"];
-        
-        
+
+        require_once 'dbh.inc.php';
+        require_once 'functions.inc.php';
+
+        if(emptySignupInput() !== false){ //checks if input fields are empty.
+            header("location: ../signup.php?error=emptyinput");
+            exit();
+        }
+
     }
     else{
         header("location: ../signup.php");

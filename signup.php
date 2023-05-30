@@ -11,8 +11,8 @@
     <form action="includes/signup.inc.php" method="post">
         <input type="text" name="email" placeholder="Email">
         <input type="text" name="username" placeholder="Username">
-        <input type="text" name="password" placeholder="Password">
-        <input type="text" name="confirmpassword" placeholder="Confirm Password">
+        <input type="password" name="password" placeholder="Password">
+        <input type="password" name="confirmpassword" placeholder="Confirm Password">
         <button type="submit" name="submit">Submit</button>
     </form>
     </div>

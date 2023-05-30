@@ -25,12 +25,12 @@
             header("location: ../signup.php?error=passwordsdontmatch");
             exit();
         }
-        if(usernameExists($conn,$username)){
-            header("location: ../signup.php?error=passwordsdontmatch"); //checks if username has been taken
+        if(usernameExists($conn,$username,$email)){
+            header("location: ../signup.php?error=usernametaken"); //checks if username has been taken
             exit();
         }
 
-        createUser($conn,$email,$username,$password,$confirmpassword);
+        createUser($conn,$email,$username,$password);
 
     }
     else{

@@ -68,4 +68,20 @@ function usernameExists($conn,$username,$email){
         $result = false;
         return $result;
     }
+    mysqli_stmt_close($stmt);
+}
+//adds new user to database
+function createUser($conn,$email,$username,$password){
+    $sql = "INSERT into users (useremail,username,userpswd) values (?,?,?);";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        header("location: ../signup.php?error=stmtfailed"); //checks if sql statement works
+            exit();
+    }
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    mysqli_stmt_bind_param($stmt, "sss", $email,$username,$hashedPassword);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location: ../login.php?error=none");
+    exit();
 }

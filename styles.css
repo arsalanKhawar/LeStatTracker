@@ -31,6 +31,14 @@ li a{
 .signup-form{
     text-align: center;
 }
+.login{
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.login-form{
+    text-align: center;
+}
 input{
     border: 2px solid rgb(15, 13, 13);
     border-radius: 4px;
@@ -42,6 +50,10 @@ input{
     transition: width 0.4s ease-in-out;
 }
 #signuplabel{
+    text-align: center;
+}
+
+#loginlabel{
     text-align: center;
 }
 

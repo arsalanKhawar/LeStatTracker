@@ -85,3 +85,14 @@ function createUser($conn,$email,$username,$password){
     header("location: ../login.php?error=none");
     exit();
 }
+
+function emptyLoginInput($username,$password){
+    $result = true;
+    if(empty($username) || empty($password)){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+    return $result;
+}

@@ -15,4 +15,20 @@
             <button type="submit" name="submit">Submit</button>
         </form>
     </div>
+
+    <?php
+//checks if site was redirected to signup page due to an error
+    if(isset($_GET["error"])){
+        if($_GET["error"] == "emptyinput"){
+            echo "<p>Make sure you fill out all the fields!</p>";
+        }
+        if($_GET["error"] == "stmtfailed"){
+            echo "internal error";
+        }
+        if($_GET["error"] == "invalidlogin"){
+            echo "Invalid Login!";
+        }
+    }
+
+?>
 </section>

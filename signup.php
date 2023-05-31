@@ -16,7 +16,6 @@
             <button type="submit" name="submit">Submit</button>
         </form>
     </div>
-</section>
 
 <?php
 //checks if site was redirected to signup page due to an error
@@ -45,3 +44,4 @@
     }
 
 ?>
+</section>

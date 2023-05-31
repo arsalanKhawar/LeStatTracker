@@ -10,8 +10,9 @@
     <h2 id="loginlabel">Login</h2>
     <div class="login-form">
         <form action="includes/login.inc.php" method="post">
-            <input type=text name=username placeholder="Username">
-            <input type=password name=password placeholder="Password">
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit" name="submit">Submit</button>
         </form>
     </div>
 </section>

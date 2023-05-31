@@ -96,3 +96,28 @@ function emptyLoginInput($username,$password){
     }
     return $result;
 }
+
+//login user to website
+function loginUser($conn, $username,$password){
+    $usernameExists = usernameExists($conn,$username,$username); //user can use email or username to login
+    if($usernameExists === false){
+        header("location: ../login.php?error=invalidlogin");
+        exit();
+    }
+
+    $hashedPassword = $usernameExists["userpswd"];
+    $checkpswd = password_verify($password,$hashedPassword);
+    if($checkpswd === false){
+        header("location: ../login.php?error=invalidlogin");
+        exit();
+    }
+
+    else if($checkpswd === true){
+        session_start();
+        $_SESSION["userid"] = $usernameExists["userid"];
+        $_SESSION["username"] = $usernameExists["username"];
+        header("location: ../home.php");
+        exit();
+    }
+
+}

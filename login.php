@@ -28,6 +28,9 @@
         if($_GET["error"] == "invalidlogin"){
             echo "Invalid Login!";
         }
+        if($_GET["error"] == "notLoggedIn"){
+            echo "Please Log In!";
+        }
         
     }
     if(isset($_GET["code"])){

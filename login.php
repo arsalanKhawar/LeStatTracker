@@ -28,6 +28,12 @@
         if($_GET["error"] == "invalidlogin"){
             echo "Invalid Login!";
         }
+        
+    }
+    if(isset($_GET["code"])){
+        if($_GET["code"] == "logout"){
+            echo "logged out!";
+        }
     }
 
 ?>

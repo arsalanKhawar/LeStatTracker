@@ -2,7 +2,8 @@
 <?php
 include_once("header.php");
 include_once("includes/functions.inc.php");
-
+echo "Logged in as ".$_SESSION["username"];
+echo "<br>";
 if(!isset($_SESSION["username"])){
     header("location: login.php?error=notLoggedIn");
     exit();

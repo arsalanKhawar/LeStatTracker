@@ -4,8 +4,12 @@
     create function to add team here (make sure to find id) -->
 
     <!--This page will create a registration page and form for the user-->
-    <?php
-    include_once 'header.php';
+<?php
+include_once 'header.php';
+if(!isset($_SESSION["username"])){
+    header("location: login.php?error=notLoggedIn");
+    exit();
+}
 ?>
 <link rel="stylesheet" href="<?php echo 'styles.css' ?>">
 <!-- Creating login form -->
@@ -31,9 +35,8 @@
             echo "internal error";
         }
         // two methods (or extract last element from team list)
-        else{
-            $team = $_GET["error"];
-            echo "$team added successfully!";
+        if($_GET["error"] == "none"){
+            echo "Team added successfully!";
         }
     }
 ?>

@@ -14,7 +14,11 @@ if(isset($_POST["submit"])){
         header("location: ../addteam.php?error=emptyinput");
         exit();
     }
-
+    if(teamExists($conn,$teamname,$userid) !== false){ 
+        header("location: ../addteam.php?error=teamtaken");
+        exit();
+    }
+    
     createTeam($conn, $userid, $teamname);
 }
 else{

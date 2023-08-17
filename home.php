@@ -8,5 +8,5 @@ if(!isset($_SESSION["username"])){
     exit();
 }
 ?>
-
-<a href="addteam.php">Add a Team</a>
+    <a href="addteam.php">Add a Team</a>
+    <a href="viewTeams.php">View Teams</a>

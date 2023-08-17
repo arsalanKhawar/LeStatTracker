@@ -121,3 +121,52 @@ function loginUser($conn, $username,$password){
     }
 
 }
+
+//adds new team to database
+function createTeam($conn,$userid,$teamname){
+    $sql = "INSERT into teams (userid,teamname) values (?,?);";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        header("location: ../addteam.php?error=stmtfailed"); //checks if sql statement works
+            exit();
+    }
+    mysqli_stmt_bind_param($stmt, "ss", $userid,$teamname);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location: ../addteam.php?error=$teamname");
+    exit();
+}
+
+function emptyTeamName($teamname){
+    $result = true;
+    if(empty($teamname)){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+    return $result;
+}
+
+
+// function getUserID($conn,$username){
+//     $sql = "SELECT * from users where username = ? OR useremail = ?;";
+//     $stmt = mysqli_stmt_init($conn);
+//     if(!mysqli_stmt_prepare($stmt,$sql)){
+//         header("location: ../signup.php?error=stmtfailed"); //checks if sql statement works
+//             exit();
+//     }
+//     mysqli_stmt_bind_param($stmt, "ss",$username,$username);
+//     mysqli_stmt_execute($stmt);
+
+//     $resultData = mysqli_stmt_get_result($stmt);
+//     if($row = mysqli_fetch_assoc($resultData)){ //returns data if username or email exists. Otherwise returns false
+//         return $row['userid'];
+//     }
+
+//     else{
+//         $result = false;
+//         return array_column($row, 'user_id');
+//     }
+//     mysqli_stmt_close($stmt);
+// }

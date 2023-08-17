@@ -13,7 +13,6 @@
     <h2 id="loginlabel">Add a team:</h2>
     <div class="login-form">
         <form action="includes/addteam.inc.php" method="post">
-            <input type="text" name="userid" placeholder="userid">
             <input type="text" name="teamname" placeholder="teamname">
             <button type="submit" name="submit">Submit</button>
         </form>
